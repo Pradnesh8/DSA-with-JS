@@ -7,7 +7,7 @@ const str1 = "hello";
 const str2 = "llheo";
 
 function isAnagram(str1, str2) {
-    if (str1.length !== str2.length){
+    if (str1.length !== str2.length) {
         return false;
     }
     let counter = {}
@@ -20,7 +20,7 @@ function isAnagram(str1, str2) {
             return false;
         }
         counter[s] -= 1;
-        // console.log(counter);
+        console.log(counter);
     }
     return true;
 }

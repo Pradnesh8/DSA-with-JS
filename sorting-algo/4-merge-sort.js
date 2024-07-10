@@ -10,6 +10,7 @@ const arrInput = [38, 24, 9, 12, 52, 6]
 
 function merge(left, right) {
     let sortedArr = []
+    // console.log(left, right)
     while (left.length && right.length) {
         if (left[0] < right[0]) {
             sortedArr.push(left.shift())

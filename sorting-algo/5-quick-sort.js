@@ -25,6 +25,7 @@ function partition(arr, low, high) {
     // swap J with pivot element
     // return J as its a new position of pivot
     [arr[j], arr[low]] = [arr[low], arr[j]]
+    // console.log(j);
     return j;
 }
 
