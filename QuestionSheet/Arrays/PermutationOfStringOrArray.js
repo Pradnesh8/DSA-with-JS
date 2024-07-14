@@ -10,7 +10,11 @@
 // and call permutation recursively
 // we remove the element from DS as well as map as it is now move back to previous position
 // after looping through the inputs we get the all permutations
-
+//      [1, 2, 3]
+//     /     |     \
+// [1, 2, 3][2, 1, 3][3, 2, 1]
+//     /    \     /    \     /    \
+// [1, 2, 3][1, 3, 2][2, 1, 3][2, 3, 1][3, 2, 1][3, 1, 2]
 function permutation(inputs, ds, ans, freq) {
     console.log("DS value: ", ds)
 
