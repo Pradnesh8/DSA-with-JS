@@ -41,3 +41,21 @@ const ans = []
 const freq = {}
 permutation(inputs, ds, ans, freq);
 console.log(ans);
+
+/**
+ * 
+ * step1: [] {}
+ * step2: [1] {1:t} option:[1, , ]
+ * step3: [1,2] {1:t, 2:t} option: [1,2, ]
+ * step4: [1,2,3] {1:t, 2:t, 3:t} option: [1,2,3]
+ * 
+ * step1: [] {}
+ * step2: [2] {2:t} option:[ ,2, ]
+ * step3: [2,1] {1:t, 2:t} option: [1,2, ]
+ * step4: [2,1,3] {1:t, 2:t, 3:t} option: [1,2,3]
+ * 
+ * step1: [] {}
+ * step2: [3] {3:t} option:[ , ,3]
+ * step3: [3,2] {2:t,3:t} option: [ ,2,3]
+ * step4: [3,2,1] {1:t, 2:t, 3:t} option: [1,2,3]
+ */
