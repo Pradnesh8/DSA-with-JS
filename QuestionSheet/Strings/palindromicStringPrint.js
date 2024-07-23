@@ -53,6 +53,29 @@ function generatePalindromicPermutations(s) {
     return palindromicPermutations;
 }
 
+/**
+ * 
+ * Solution Steps
+Count character frequencies:
+
+Use a Map to count occurrences of each character.
+Check for valid palindromic permutation:
+
+Track characters with odd frequencies. If more than one character has an odd count, 
+no palindromic permutation is possible.
+Generate half permutations:
+
+Construct a string halfStr containing half of each character's occurrences.
+Generate all unique permutations of halfStr.
+Construct full palindromes:
+
+For each permutation of halfStr, form the full palindrome by appending the mirrored second half and 
+any middle character with an odd count (if present).
+This approach efficiently generates all palindromic permutations by leveraging the properties of 
+palindromes and ensures that the solution is both correct and optimal.
+ */
+
+
 // Example usage:
 console.log(generatePalindromicPermutations("aabb")); // Output: ["abba", "baab"]
 console.log(generatePalindromicPermutations("racecar"));  // Output: []
