@@ -13,24 +13,24 @@
 
 // Edge Cases:
 // If nums is empty, the only subset is the empty set.
-function subsets(nums) {
-    const res = [];
-    // Backtracking:
-    // backtrack is initially called with start set to 0 and currentSubset as an empty array.
-    // For each index from start to the end of the nums array, the current number is added to currentSubset, 
-    // and backtrack is called recursively with the next index.
-    // After exploring all subsets that include the current number, it is removed from currentSubset to explore 
-    // subsets that do not include it.
-    function backtrack(start, currentSubset) {
-        res.push([...currentSubset])
-        for (let i = start; i < nums.length; i++) {
-            currentSubset.push(nums[i]);
-            backtrack(i + 1, currentSubset);
-            currentSubset.pop();
-        }
-    }
-    backtrack(0, []);
-    return res
-}
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
 
+var subsets = function (nums) {
+    let temp = []
+    let result = []
+    function backtrack(ns, i) {
+        if (i === nums.length) {
+            return result.push([...temp])
+        }
+        temp.push(ns[i]); // push 1,2, ...
+        backtrack(ns, i + 1); // include 1,2, ...
+        temp.pop();
+        backtrack(ns, i + 1); // dont include 1,2, ...
+    }
+    backtrack(nums, 0)
+    return result
+}
 console.log(subsets([1, 2, 3]))
