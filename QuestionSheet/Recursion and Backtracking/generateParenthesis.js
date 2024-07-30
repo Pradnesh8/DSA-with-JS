@@ -2,6 +2,27 @@
  * @param {number} n
  * @return {string[]}
  */
+// Approach: backtracking
+/**
+ * create stack = [] to keep paranthesis & res = [] to store results
+ * Conditions while generating:
+ * 1. open < n
+ * 2. close < open
+ * 3. open == close == N // base case
+ * 
+ * implementation
+ * check base case
+ *      if open == close &&  open == n
+ *          res.push(stack.join(""))// join stack to create string 
+ * check if open < n
+ *      add ( in stack
+ *      backtrack (open+1,close) // as open parenthesis is added
+ *      remove ( from stack
+ * check if close < open
+ *      add ) in stack
+ *      backtrack (open,close+1) // as close parenthesis is added
+ *      remove ) from stack
+ */
 var generateParenthesis = function (n) {
     const stack = []
     const res = []
