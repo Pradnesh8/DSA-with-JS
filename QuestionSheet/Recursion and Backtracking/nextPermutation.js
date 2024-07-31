@@ -21,6 +21,8 @@ The replacement must be in place and use only constant extra memory.
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
+
+// INTUITION approach
 var nextPermutation = function (nums) {
     let breakpoint = -1;
     for (let i = nums.length - 2; i >= 0; i--) {
